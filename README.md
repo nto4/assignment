@@ -31,7 +31,11 @@ kubectl get pods -n devops-tools
 kubectl apply -f serviceAccount.yaml
 
 
+kubectl get nodes
 
+it creates a PersistentVolume volume in a specific node under /mnt location.
+
+kubectl create -f volume.yaml
 #Resources  
 * https://buildvirtual.net/deploy-a-kubernetes-cluster-using-ansible/  (includes some misconfiguration of key generation and joining the cluster for nodes) I had to do these parts manually.   
 * https://devopscube.com/setup-jenkins-on-kubernetes-cluster/   
