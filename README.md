@@ -62,6 +62,11 @@ kubectl exec -it ....
 
 #### Nexus
 
+kubectl get namespace 
+--> u must see that namespace if it dos not exist create your namespace 
+
+im using same namespace with jenkings --> devops-tools --> kubectl create namespace devops-tools
+
 
 
 #Resources  
