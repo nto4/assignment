@@ -25,8 +25,7 @@ kubectl create namespace devops-tools
 
 
 
-* verify:
-kubectl get pods -n devops-tools
+
 
 kubectl apply -f serviceAccount.yaml
 
@@ -39,6 +38,16 @@ values:
 - n-01-k8s-mb-test --> its your node name
 
 kubectl create -f volume.yaml
+
+
+kubectl apply -f deployment.yaml
+
+
+* verify:
+kubectl get deployments -n devops-tools
+kubectl  describe deployments --namespace=devops-tools
+kubectl get pods -n devops-tools
+
 #Resources  
 * https://buildvirtual.net/deploy-a-kubernetes-cluster-using-ansible/  (includes some misconfiguration of key generation and joining the cluster for nodes) I had to do these parts manually.   
 * https://devopscube.com/setup-jenkins-on-kubernetes-cluster/   
