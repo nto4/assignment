@@ -19,7 +19,7 @@ sudo kubeadm join 172.31.200.60:6443 --token 00i857.hhwp40v1wayw2pte     --disco
  kubectl get nodes
 
 ### Setup Jenking & Nexus
-## Jenkings 
+#### Jenkings 
 
 kubectl create namespace devops-tools
 
@@ -47,6 +47,22 @@ kubectl apply -f deployment.yaml
 kubectl get deployments -n devops-tools
 kubectl  describe deployments --namespace=devops-tools
 kubectl get pods -n devops-tools
+
+kubectl apply -f service.yaml
+
+
+
+kubectl get pods --namespace=devops-tools
+
+kubectl logs {your_jenkings_pod} --namespace=jenkins
+
+if you have problem abouth unlock phase u can acces direcrly that pod 
+kubectl exec -it ....
+
+
+#### Nexus
+
+
 
 #Resources  
 * https://buildvirtual.net/deploy-a-kubernetes-cluster-using-ansible/  (includes some misconfiguration of key generation and joining the cluster for nodes) I had to do these parts manually.   
