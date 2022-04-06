@@ -67,7 +67,20 @@ kubectl get namespace
 
 im using same namespace with jenkings --> devops-tools --> kubectl create namespace devops-tools
 
+kubectl create -f nexus_deployment.yaml
 
+
+kubectl describe service nexus-service -n devops-tools
+kubectl apply -f nexus_service.yaml
+
+
+
+* verify:  
+kubectl get pod -n devops-tools
+
+
+* unlock nexus  
+kubectl exec nexus-55976bf6fd-xkcft -n devops-tools cat /nexus-data/admin.password
 
 #Resources  
 * https://buildvirtual.net/deploy-a-kubernetes-cluster-using-ansible/  (includes some misconfiguration of key generation and joining the cluster for nodes) I had to do these parts manually.   
