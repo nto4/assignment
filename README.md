@@ -83,10 +83,33 @@ kubectl get pod -n devops-tools
 * unlock nexus  
 kubectl exec nexus-55976bf6fd-xkcft -n devops-tools cat /nexus-data/admin.password
 ```
+##### situation:
+
+```
+kube@m-01-k8s-mb-test:/home/mehmet$ kubectl get svc --namespace devops-tools
+NAME              TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+jenkins-service   NodePort   10.107.19.200   <none>        8080:32000/TCP   6d18h
+nexus-service     NodePort   10.101.131.54   <none>        8081:32001/TCP   6d17h
+(reverse-i-search)`': kubectl get nod^C
+kube@m-01-k8s-mb-test:/home/mehmet$ kubectl get pod -n devops-tools
+NAME                       READY   STATUS    RESTARTS   AGE
+jenkins-85fcfbb869-sqf9n   1/1     Running   0          6d18h
+nexus-55976bf6fd-xkcft     1/1     Running   0          6d17h
+kube@m-01-k8s-mb-test:/home/mehmet$ kubectl get services --namespace devops-tools
+NAME              TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+jenkins-service   NodePort   10.107.19.200   <none>        8080:32000/TCP   6d18h
+nexus-service     NodePort   10.101.131.54   <none>        8081:32001/TCP   6d17h
+kube@m-01-k8s-mb-test:/home/mehmet$
+```
+
+
 #Resources  
 * https://buildvirtual.net/deploy-a-kubernetes-cluster-using-ansible/  (includes some misconfiguration of key generation and joining the cluster for nodes) I had to do these parts manually.   
 * https://devopscube.com/setup-jenkins-on-kubernetes-cluster/   
 * https://devopscube.com/setup-nexus-kubernetes/  
+
+
+
 
 
 
