@@ -28,6 +28,8 @@ kubectl create namespace devops-tools
 * verify:
 kubectl get pods -n devops-tools
 
+kubectl apply -f serviceAccount.yaml
+
 
 
 #Resources  
