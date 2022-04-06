@@ -1,5 +1,6 @@
 # assignment
-Commodo assignment unfinished
+Commodo assignment unfinished,
+I was proper setup k8s and deployed jenkins and nexus on that cluster.
 
 
 ### Setup k8s 
