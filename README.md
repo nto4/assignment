@@ -101,7 +101,10 @@ jenkins-service   NodePort   10.107.19.200   <none>        8080:32000/TCP   6d18
 nexus-service     NodePort   10.101.131.54   <none>        8081:32001/TCP   6d17h
 kube@m-01-k8s-mb-test:/home/mehmet$
 ```
+![Alt text](/jenkings_dashboard.PNG?raw=true "Jenkings  Dashboard")
 
+
+![Alt text](/Nexus_dashboard.PNG?raw=true "Nexus  Dashboard")
 
 #Resources  
 * https://buildvirtual.net/deploy-a-kubernetes-cluster-using-ansible/  (includes some misconfiguration of key generation and joining the cluster for nodes) I had to do these parts manually.   
