@@ -34,6 +34,9 @@ kubectl apply -f serviceAccount.yaml
 kubectl get nodes
 
 it creates a PersistentVolume volume in a specific node under /mnt location.
+so u must edit in volume.yml
+values:
+- n-01-k8s-mb-test --> its your node name
 
 kubectl create -f volume.yaml
 #Resources  
