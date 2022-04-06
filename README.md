@@ -4,7 +4,7 @@ Commodo assignment unfinished
 
 ### Setup k8s 
 preapare hosts file in ansible and gain acces for ansible(ssh-copy or extra arg username pw etc.)
-
+```
 ansible-playbook users.yml -u {your_username} --extra-vars 'ansible_sudo_pass={your_password}'
 ansible-playbook install-k8s.yml -u {your_username} --extra-vars 'ansible_sudo_pass={your_password}'
 ansible-playbook master.yml -u {your_username} --extra-vars 'ansible_sudo_pass={your_password}'
@@ -17,10 +17,10 @@ sudo kubeadm join 172.31.200.60:6443 --token 00i857.hhwp40v1wayw2pte     --disco
 
  * verify:
  kubectl get nodes
-
+```
 ### Setup Jenking & Nexus
 #### Jenkings 
-
+```
 kubectl create namespace devops-tools
 
 
@@ -58,10 +58,10 @@ kubectl logs {your_jenkings_pod} --namespace=jenkins
 
 if you have problem abouth unlock phase u can acces direcrly that pod 
 kubectl exec -it ....
-
+```
 
 #### Nexus
-
+```
 kubectl get namespace 
 --> u must see that namespace if it dos not exist create your namespace 
 
@@ -81,7 +81,7 @@ kubectl get pod -n devops-tools
 
 * unlock nexus  
 kubectl exec nexus-55976bf6fd-xkcft -n devops-tools cat /nexus-data/admin.password
-
+```
 #Resources  
 * https://buildvirtual.net/deploy-a-kubernetes-cluster-using-ansible/  (includes some misconfiguration of key generation and joining the cluster for nodes) I had to do these parts manually.   
 * https://devopscube.com/setup-jenkins-on-kubernetes-cluster/   
